@@ -1,6 +1,4 @@
-# Phantom Tours Spring boot API
-
-**VueJS web appliaction of Group-C for SOFTWARE SYSTEMS DEVELOPMENT (BCC608), Sothamption Solent University**
+# Travel Nation Spring boot API
 
 ## Application Configuration
 
@@ -15,7 +13,7 @@ spring.datasource.password = <password>
 # Note: If you want to use a different relational database make sure to include the driver dependency in `pom.xml` and update the configurations.
 
 # Configuring Tomcat port (Default is 8080)
-server.port=9000
+server.port=8050
 
 # Hibernate ddl auto (create, create-drop, validate, update)
 # Specify the database creation mode.
@@ -43,7 +41,7 @@ Create a database schema and name it as exactly as you named your database in **
 
 #### Run the application
 
- - Right click on **`TourApiApplication.Java`** and `Run As` and `Java Application`
+ - Right click on **`TravelNationApi.Java`** and `Run As` and `Java Application`
 
 #### Insert user roles.
 ```bash
@@ -52,7 +50,7 @@ mysql> INSERT INTO roles(name) VALUES('ROLE_USER');
 mysql> INSERT INTO roles(name) VALUES('ROLE_ADMIN');
 ```
 ## Setting up an Admin account
-Users must be created from the client. Connect to the API from the VueJS Nuxt application register a new user.
+Users must be created from the client. Connect to the API from the React application register a new user.
 Default user role is set to `ROLE_USER` 
 #### Altering user role.
 ```bash
