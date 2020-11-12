@@ -7,20 +7,20 @@ import javax.validation.constraints.*;
 
 public class SignupRequest {
 
-	
+	private int user_id;
+	public int getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
+	}
+
 	private String username;
 	@Email
 	private String email;
 	private String role;
 	private String name;
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	@Size(min = 6, max = 40)
 	private String password;
 	private int age;
@@ -28,6 +28,15 @@ public class SignupRequest {
 	@NotNull
 	@Size(max = 20)
 	private String mobile;
+	
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public String getUsername() {
 		return username;

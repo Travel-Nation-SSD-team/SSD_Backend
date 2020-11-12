@@ -17,7 +17,7 @@ import com.ssdgroupc.app.entity.User;
 public class UserDetailsImpl implements UserDetails {
 	private static final long serialVersionUID = 1L;
 
-	private int user_id;
+	private long user_id;
 
 	private String username;
 
@@ -28,9 +28,9 @@ public class UserDetailsImpl implements UserDetails {
 
 	private Collection<? extends GrantedAuthority> authorities;
 
-	public UserDetailsImpl(int user_id, String username, String email, String password,
+	public UserDetailsImpl(long user_id, String username, String email, String password,
 			Collection<? extends GrantedAuthority> authorities) {
-		this.user_id = user_id;
+		this.user_id=user_id;
 		this.username = username;
 		this.email = email;
 		this.password = password;
@@ -58,7 +58,7 @@ public class UserDetailsImpl implements UserDetails {
 		return authorities;
 	}
 
-	public int getUser_id() {
+	public long getUser_id() {
 		return user_id;
 	}
 

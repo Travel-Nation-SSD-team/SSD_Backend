@@ -18,7 +18,7 @@ import javax.validation.constraints.Size;
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int user_id;
+	private long user_id;
 
 	@NotNull
 	@Size(max = 200)
@@ -48,8 +48,9 @@ public class User {
 	public User() {
 	}
 
-	public User(String email,String username, String name, String password , int age, String nationality, String mobile) {
+	public User(long user_id,String email,String username, String name, String password , int age, String nationality, String mobile) {
 		super();
+		this.user_id=user_id;
 		this.email = email;
 		this.username = username;
 		this.name = name;
@@ -59,11 +60,13 @@ public class User {
 		this.mobile = mobile;
 	}
 
-	public int getUser_id() {
+	
+
+	public long getUser_id() {
 		return user_id;
 	}
 
-	public void setUser_id(int user_id) {
+	public void setUser_id(long user_id) {
 		this.user_id = user_id;
 	}
 

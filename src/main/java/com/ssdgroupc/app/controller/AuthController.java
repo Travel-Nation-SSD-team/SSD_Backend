@@ -96,7 +96,7 @@ public class AuthController {
 	/**
 	 * Method to sign up a user.
 	 */
-	@PostMapping("/signup")
+	@PostMapping(value="/signup")
 	public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
 		if (userRepository.existsByUsername(signUpRequest.getUsername())) {
 			LOGGER.warn("Duplicate username found");
@@ -109,13 +109,13 @@ public class AuthController {
 		}
 
 		// Create new user's account
-		User user = new User(signUpRequest.getEmail(), signUpRequest.getUsername(),
-				encoder.encode(signUpRequest.getPassword()),signUpRequest.getName(),signUpRequest.getAge(),signUpRequest.getNationality(),signUpRequest.getMobile());
+		User user = new User(signUpRequest.getUser_id(),signUpRequest.getEmail(), signUpRequest.getUsername(),signUpRequest.getName(),
+				(signUpRequest.getPassword()),signUpRequest.getAge(),signUpRequest.getNationality(),signUpRequest.getMobile());
 
 		String strRoles = signUpRequest.getRole();
 		Set<Role> roles = new HashSet<>();
 
-		if (strRoles == null) {
+		if (strRoles.equals("user")) {
 			Role userRole = roleRepository.findByName(ERole.ROLE_USER)
 					.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
 			roles.add(userRole);
