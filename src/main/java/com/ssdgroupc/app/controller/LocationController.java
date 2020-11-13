@@ -62,7 +62,7 @@ public class LocationController {
 
 		if (locations.isEmpty()) {
 			LOGGER.info("location records are empty");
-			throw new NotFoundException("No gallery records were found");
+			throw new NotFoundException("No location records were found");
 		}
 
 		return new ResponseEntity<List<Location>>(locations, HttpStatus.OK);

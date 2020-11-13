@@ -61,6 +61,8 @@ public class HotelController {
 		List<Hotel> hotel = HotelService.getHotels();
 
 		if (hotel.isEmpty()) {
+
+			LOGGER.info("hotel records are empty");
 			throw new NotFoundException("No Hotels records were found");
 		}
 
