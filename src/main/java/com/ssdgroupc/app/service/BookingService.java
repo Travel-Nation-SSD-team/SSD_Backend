@@ -15,7 +15,7 @@ import com.ssdgroupc.app.repository.BookingRepository;
 public class BookingService {
 
 	/**
-	 * Injects BookingRepository
+	 * Injects Bookingrepository
 	 */
 	@Autowired
 	private BookingRepository bookingRepository;
