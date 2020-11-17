@@ -55,7 +55,7 @@ Default user role is set to `ROLE_USER`
 #### Altering user role.
 ```bash
 # Get the user id of the user you registered by providing username 
-mysql> SELECT id FROM 'tour-api'.users WHERE username = 'admin';
+mysql> SELECT id FROM 'tourism_organization'.users WHERE username = 'admin';
 +----+
 | id |
 +----+
@@ -63,7 +63,7 @@ mysql> SELECT id FROM 'tour-api'.users WHERE username = 'admin';
 +----+
 
 # Get the role id for `ROLE_ADMIN`
-mysql> SELECT id FROM `tour-api`.roles WHERE name = 'ROLE_ADMIN';
+mysql> SELECT id FROM `tourism_organization`.roles WHERE name = 'ROLE_ADMIN';
 +----+
 | id |
 +----+
@@ -71,9 +71,9 @@ mysql> SELECT id FROM `tour-api`.roles WHERE name = 'ROLE_ADMIN';
 +----+
 
 # Alter the `role_id` to match the `ROLE_ADMIN` id to make the user an Admin
-mysql> UPDATE `tour-api`.`user_roles` SET `role_id` = '2' WHERE (`user_id` = '1') and (`role_id` = '1');
+mysql> UPDATE `tourism_organization`.`user_roles` SET `role_id` = '2' WHERE (`user_id` = '1') and (`role_id` = '1');
 
 # Confirm that the role_id matches `ROLE_ADMIN` id
-mysql> SELECT role_id FROM `tour-api`.user_roles WHERE user_id = 2;
+mysql> SELECT role_id FROM `tourism_organization`.user_roles WHERE user_id = 2;
 ```
 Once the first admin is set up you can add more admins by accessing the admin dashboard. 
